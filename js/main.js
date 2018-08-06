@@ -16,4 +16,19 @@ $(document).ready(function(){
       }
     });
   });
+  $('.js-popup').on('click', function () {
+    $('.popup').addClass('popup--show');
+    $('body').addClass('body-hidden');
+  });
+  
+  
+  $('.popup').on('click', function(event) {
+    var thisPopup = this;
+    var thisTarget = event.target;
+  
+    if (thisPopup === thisTarget) {
+      $('.popup').removeClass('popup--show');
+      $('body').removeClass('body-hidden');
+    }
+  });
 });
